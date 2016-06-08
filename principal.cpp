@@ -7,10 +7,10 @@
 
 using namespace std;
 
-//Fuñção principal
+//FuÃ±Ã§Ã£o principal
 int main(int argc, char* args[])
 {
-	bool sair = false; //Variavel logica usada na condição do laço
+	bool sair = false; //Variavel logica usada na condiÃ§Ã£o do laÃ§o
 	string jog1, jog2; //Variaveis usadas para salvar o nome dos jogadores
 	int vida1 = 20, vida2 = 20; // vida inicial dos jogadores
 	int A = 4, D = 2; // ataque e defesa dos jogadores
@@ -22,7 +22,7 @@ int main(int argc, char* args[])
 	cout << "Digite o nome do jogador 2:" << endl; // pede para que o jogador 2 digite seu nome
 	cin >> jog2; //Salva o nome digitado na variavel 
 	
-	// enquanto a variavel receber a condição logica falsa o laço continua 
+	// enquanto a variavel receber a condiÃ§Ã£o logica falsa o laÃ§o continua 
 	while (sair == false) {
 
 		//mostra os guerreiros e os dados do jogador
@@ -35,16 +35,16 @@ int main(int argc, char* args[])
 		cout << "D:" << D << "           " << "D:" << D << endl;
 
 
-		system("pause"); //o jogo pausa para que o jogador espere que as ações abaixo aconteçam 
+		system("pause"); //o jogo pausa para que o jogador espere que as aÃ§Ãµes abaixo aconteÃ§am 
 
 		int dado6; //variavel usada para receber aleatoriamente o numero do dado 
 
 		//comando uasado para que possa usar o comando rand fazer com que a variavel receba um numero aleatorio 
 		srand((int)time(0));
-		//Gera um número aleatorio
+		//Gera um nÃºmero aleatorio
 		dado6 = rand() % 6 + 1;
 
-		//Se o número gerado for maior que quatro, executa o if
+		//Se o nÃºmero gerado for maior que quatro, executa o if
 		if (dado6 > 4)
 		{
 			vida1 = vida1 - dado6; // usa o numero gerado como dano na vida do jogador
@@ -65,7 +65,7 @@ int main(int argc, char* args[])
 		//Mesma coisa para o jogador 2
 		dado6 = rand() % 6 + 1;
 
-		//Se o número gerado for maior que quatro, executa o if
+		//Se o nÃºmero gerado for maior que quatro, executa o if
 		if (dado6 > 4)
 		{
 
@@ -74,8 +74,8 @@ int main(int argc, char* args[])
 			cout << jog1 << " Acertou!" << endl;// diz que o jogador causou o dano
 			cout << " Proxima jogada (Digite enter):" << endl; //  manda apertar o enter para continuar 
 			cin.get();//espera que o jogador digite enter  
-
-		//Se o número gerado for menor ou igual a quatro, executa o else if
+		}
+		//Se o nÃºmero gerado for menor ou igual a quatro, executa o else if
 		else if (dado6 <= 4) {
 
 			cout << jog1 << " Errou!" << endl; //Mostra que o jogador errou
@@ -86,16 +86,16 @@ int main(int argc, char* args[])
 		// mostra os status dos jogadores spos o final da rodada 
 		cout << "Vida:" << vida1 << "           " << "Vida:" << vida2 << endl;
 
-		system("cls"); //Limpa a tela. se sair não limpa
+		system("cls"); //Limpa a tela. se sair nÃ£o limpa
 		
 					   
-		// testa se a vida de algum jogador for = 0, executa o if para que a variavel logica se torne verdadeira e o laço acaba
+		// testa se a vida de algum jogador for = 0, executa o if para que a variavel logica se torne verdadeira e o laÃ§o acaba
 		if (vida1 <= 0 || vida2 <= 0)
 		{
 
 			sair = true;
 		}
-		// se não for limpa a tela
+		// se nÃ£o for limpa a tela
 		else system("cls");
 	}
 
